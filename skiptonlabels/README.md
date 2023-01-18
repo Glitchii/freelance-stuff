@@ -8,5 +8,5 @@ The useable space on the sheet for customer designs is 205mm x 260mm I always ha
 
 <details>
     <summary>Design Image</summary>
-    <img src="skiptonlabels/Stickers-Per-sheet.jpg" alt="Stickers Per Sheet" width="100%" height="auto">
+    <img width="100%" height="auto" src="https://github.com/Glitchii/freelance-stuff/blob/main/skiptonlabels/Stickers-Per-sheet.jpg" alt="Design image">
 </details>
