@@ -61,6 +61,7 @@ main {
 }
 
 .panel button.calculate {
+    transition: .2s;
     padding: 2px 10px;
     margin: 6% 0;
 }
@@ -156,10 +157,91 @@ main {
     margin-top: var(--logoSpace);
 }
 
-body[class$=invalid] button.calculate {
+body.invalid button.calculate {
     opacity: .5;
     cursor: not-allowed;
     pointer-events: none;
+}
+
+body:not(.calculated) .info {
+    display: none;
+}
+
+body:not(.calculated) .sheet::after {
+    content: "No Stickers";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    opacity: .2;
+    font-weight: 600;
+
+}
+
+[role=tooltip] {
+    --tooltip-color: #e84e1c;
+    background-color: var(--tooltip-color);
+    color: white;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 85%;
+    font-weight: 700;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    white-space: nowrap;
+    min-height: 24px;
+    width: fit-content;
+    left: 0;
+    top: auto;
+    outline: none;
+    bottom: 100%;
+    top: 80px;
+    right: 0;
+    z-index: 10;
+    pointer-events: none;
+}
+[role=tooltip]:not(:last-of-type) {
+    display: none;
+}
+
+[role=tooltip]::after {
+    border: 5px solid transparent;
+    content: "";
+    display: block;
+    height: 0;
+    position: absolute;
+    width: 0;
+    left: var(--arrowLeft, 15px);
+    bottom: -10px;
+    border-top-color: var(--tooltip-color);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+}
+
+body.calculated .info {
+    animation: fadeIn .5s ease;
+}
+
+.value .input~.unitText {
+    display: none;
+}
+
+.value .input {
+    padding: 1.6px 8px 1.6px 8px;
+    max-width: 10ch;
+    max-width: 6ch;
+    min-width: 6ch;
+}
+
+[for=width]+.value {
+    margin-left: 1ch;
 }
 
 @media screen and (max-width: 800px) {
