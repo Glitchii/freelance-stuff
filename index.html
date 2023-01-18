@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stickers</title>
+    <link rel="icon" href="https://skiptonlabels.co.uk/wp-content/uploads/2020/07/cropped-SL-Logo-1-32x32.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <section class="panel">
+            <div>Please enter the dimentions of your shape</div>
+            <div class="units">
+                <span><input type="radio" name="unit" value="mm" checked autocomplete="off">MM</span>
+                <span><input type="radio" name="unit" value="cm" autocomplete="off">CM</span>
+                <span><input type="radio" name="unit" value="in" autocomplete="off">Inches</span>
+            </div>
+            <div class="messures">
+                <div>
+                    <label for="width">Width <span>(</span><span class="unitText">mm</span>)</label>
+                    <span class="value">
+                        <input class="input" placeholder="0" autocomplete="off" value="60">
+                        <span class="unitText">mm</span>
+                    </span>
+                </div>
+                <div>
+                    <label for="height">Height (<span class="unitText">mm</span>)</label>
+                    <span class="value">
+                        <input class="input" placeholder="0" autocomplete="off" value="40">
+                        <span class="unitText">mm</span>
+                    </span>
+                </div>
+            </div>
+            <button class="calculate">Calculate</button>
+            <div>At these dimentions we can fit</div>
+            <div><span class="count"></span> stickers per sheet</div>
+            <div style="margin-top: 9%;">To order click <a href="">here</a></div>
+        </section>
+
+        <section class="area">
+            <div class="sheet">
+                <img class="logo" src="https://skiptonlabels.co.uk/wp-content/uploads/2020/07/SL-Logo-1.jpg">
+            </div>
+        </section>
+    </main>
+</body>
+
+<script src="script.js"></script>
+
+</html>

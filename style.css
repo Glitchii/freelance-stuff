@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: var(#333);
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.panel {
+    text-align: center;
+    place-self: center;
+}
+
+.panel input[type="text"] {
+    width: 50px;
+}
+
+.units {
+    margin: 1% 0 10% 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.messures {
+    display: grid;
+    gap: 10px;
+    font-size: 120%;
+}
+
+.messures {
+    font-size: 120%;
+}
+
+.panel :is(button, a) {
+    all: unset;
+    background: #e84e1c;
+    color: #fff;
+    border-radius: 4px;
+    padding: 3px 10px;
+    cursor: pointer;
+}
+
+.panel a {
+    padding: 3px 2px;
+}
+
+.panel button.calculate {
+    padding: 2px 10px;
+    margin: 6% 0;
+}
+
+.value {
+    border: 1px solid #7e7e7c;
+    display: inline-flex;
+    border-radius: 6px;
+    font-size: 80%;
+    overflow: hidden;
+}
+
+.value .input {
+    all: unset;
+    outline: none;
+    border: none;
+    padding: 0 0 0 8px;
+    width: 2ch;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.value .input+.unitText {
+    padding: 1.6px 8px 1.6px 0;
+}
+
+.value .input:focus-within {
+    outline: none;
+}
+
+.area {
+    width: 40%;
+    display: flex;
+    padding: 2rem;
+    position: relative;
+}
+
+.sheet {
+    --borderRadius: 10px;
+    --logoSpace: 28%;
+    aspect-ratio: 210 / 297;
+    font-size: 1mm;
+    position: absolute;
+    display: grid;
+    background: #fff;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    max-width: calc(100% - 3rem);
+    max-height: calc(100% - 3rem);
+    overflow: hidden;
+    box-shadow: rgba(50, 50, 93, 0.15) 0px 50px 100px -20px, rgba(0, 0, 0, 0) 0px 30px 60px -30px;
+    box-shadow: rgba(50, 50, 93, 0.08) 0px 50px 100px -20px, rgba(0, 0, 0, 0.05) 0px 30px 60px -30px;
+    box-shadow: 0 0.3rem 2rem 0 rgba(0, 0, 0, 0.040);
+    box-shadow: none;
+    border-radius: var(--borderRadius);
+    border: 1px solid #ddd;
+    padding: var(--padding);
+    padding-bottom: calc(var(--padding) + var(--padding) / 2);
+    padding-bottom: calc(var(--padding) + 10px) !important;
+}
+
+.area img {
+    width: 82px;
+    height: auto;
+    place-self: center;
+    align-self: end;
+    grid-column: 1/-1;
+    width: calc(15 * 1%);
+    position: absolute;
+    top: 1.55%;
+}
+
+.sticker {
+    aspect-ratio: var(--stickerRatio);
+    width: calc(var(--stickerWidth) * 1%);
+    border: 2px solid #e84f1dab;
+    border-radius: var(--borderRadius);
+    margin: auto;
+}
+
+.sticker.firstRow {
+    margin-top: var(--logoSpace);
+}
+
+body[class$=invalid] button.calculate {
+    opacity: .5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+@media screen and (max-width: 800px) {
+    main {
+        flex-direction: column;
+        padding-top: 10%;
+    }
+
+    .area {
+        width: auto;
+        height: 100%;
+    }
+
+    .area img {
+        align-self: center;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .sheet {
+        min-width: 200px;
+        min-height: 283px;
+    }
+}
+
+@media screen and (max-height: 675px) {
+    .area img {
+        align-self: center;
+    }
+}
